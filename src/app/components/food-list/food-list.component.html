@@ -1,0 +1,12 @@
+<div>
+    <h3>Alimentos disponibles</h3>
+    <ul>
+        <li *ngFor="let food of foods">
+            {{ food.name }}: {{ food.calories }} calorías
+            <select (change)="onMealSelect($event, food)">
+                <option value="">Selecciona una comida</option>
+                <option *ngFor="let meal of meals" [value]="meal.id">{{ meal.name }}</option>
+            </select>
+        </li>
+    </ul>
+</div>
